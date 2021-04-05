@@ -1,33 +1,23 @@
+## Import the necessary packages
 import pandas as pd
 import numpy as np
 import os
 import csv
 import neurokit2 as nk
 
-project_dir = os.getcwd().split('\\')[:-1]
-project_dir = '\\'.join(project_dir)
-data_dir = project_dir + '\\data'
+## Get the correct directory information
+project_dir = os.getcwd().split('\\')[:-1] 
+project_dir = '\\'.join(project_dir) # Get the project dir
+data_dir = project_dir + '\\data' # Get the data dir
+
+# Get the specific physiological directories and the files in these dirs and store these in respectively named variables
 physio_dir = data_dir+'\\interim\\physiological'
 physio_files = [file for file in os.listdir(physio_dir)]
 baseline_dir = data_dir + '\\interim\\physiological_baseline'
 baseline_files = [file for file in os.listdir(baseline_dir)]
+all_dir = data_dir + '\\interim\\physiological_all'
+all_files = [file for file in os.listdir(all_dir)]
 
-def compute_PP_EDA(physio_data, pp):
-    processed = {}
-    
-    freq=round(1/(physio_data.t_from_start.values[1] - physio_data.t_from_start.values[0]))
-    seconds = physio_data.t_from_start.values[-1] - physio_data.t_from_start.values[0]
-    
-    signals, info = nk.eda_process(physio_data.raw_EDA, sampling_rate=freq)
-    
-    processed['mean_SCL'] = signals.EDA_Tonic.mean()
-    processed['std_SCL'] = signals.EDA_Tonic.std()
-    processed['max_SCL'] = signals.EDA_Tonic.max()
-    processed['min_SCL'] = signals.EDA_Tonic.min()
-    processed['mean_SCL_Baseline'] = np.concatenate((signals.EDA_Tonic.values[:30*freq], signals.EDA_Tonic.values[-30*freq:])).mean() # mean of first 30 and last 30 seconds of EDA as baseline
-    processed['pp'] = pp
-
-    return processed
 
 def compute_EDA_Targets(physio_data: pd.DataFrame) -> dict:
     """Computes the EDA Target variables from an abritray dataframe containing the raw EDA signal. Returns these target variables in a dict."""
