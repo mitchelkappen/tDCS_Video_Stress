@@ -1,4 +1,4 @@
-Stress prediction through facial behaviour
+Stress Prediction through Facial Behaviour
 ==============================
 
 This project is the implementation of a study into the prediction of physiological arousal through facial behaviour, as part of a research internship by Alexander Kern at the GHEP Lab of the University of Ghent.
