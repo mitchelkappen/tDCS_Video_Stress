@@ -11,7 +11,7 @@ In order to run the notebooks and scripts that are present in the notebook direc
 
 After creating an anaconda environment environment one can run the following commands to install the required packages:\
 `conda config --add channels conda-forge`\
-`conda install numpy=1.19.2 pandas=1.1.3 neurokit2=0.1.1 pytables=3.6.1 scikit-learn=0.24.1 matplotlib=3.4.1 tqdm=4.59.0 pyarrow`\
+`conda install numpy=1.19.2 pandas=1.1.3 neurokit2=0.1.1 pytables=3.6.1 scikit-learn=0.24.1 matplotlib=3.4.1 tqdm=4.59.0 pyarrow=2.0.0`\
 `pip install bioread=2.1.2`
 
 The notebooks can be accessed using Jupyter lab, which can be installed in the conda environment as follows:\
