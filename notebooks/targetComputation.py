@@ -9,7 +9,7 @@ import neurokit2 as nk
 project_dir = os.getcwd().split('\\')[:-1] 
 project_dir = '\\'.join(project_dir) # Get the project dir
 
-Mitchel = False
+Mitchel = True
 
 # Get the data dir
 if Mitchel:
