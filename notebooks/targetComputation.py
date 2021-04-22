@@ -4,12 +4,11 @@ import numpy as np
 import os
 import csv
 import neurokit2 as nk
+from CONSTANTS import *
 
 ## Get the correct directory information
 project_dir = os.getcwd().split('\\')[:-1] 
 project_dir = '\\'.join(project_dir) # Get the project dir
-
-Mitchel = True
 
 # Get the data dir
 if Mitchel:
