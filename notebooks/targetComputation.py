@@ -8,7 +8,15 @@ import neurokit2 as nk
 ## Get the correct directory information
 project_dir = os.getcwd().split('\\')[:-1] 
 project_dir = '\\'.join(project_dir) # Get the project dir
-data_dir = project_dir + '\\data' # Get the data dir
+
+Mitchel = True
+
+# Get the data dir
+if Mitchel:
+    data_dir = 'C:\\Users\\mitch\\OneDrive - UGent\\UGent\\Projects\\7. tDCS_Stress_WM_deSmet\\data'
+    data_dir = 'Z:\\ghep_lab\\2020_DeSmetKappen_tDCS_Stress_WM_VIDEO\\Data'
+else: 
+    data_dir = project_dir + '\\data'
 
 # Get the specific physiological directories and the files in these dirs and store these in respectively named variables
 physio_dir = data_dir+'\\interim\\physiological'
